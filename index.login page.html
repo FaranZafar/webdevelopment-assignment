@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <style>
+        .box{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border: 2px bold black;
+    background-color: rgb(65, 114, 114);
+    text-align: center;
+   padding-left: 30px;
+   margin-left: 280px;
+   margin-top: 100px;
+   background-image: url(data:image/jpeg;base64,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);
+   background-size: cover;
+   border-radius: 30px;
+}
+body{
+    background-image: url(background\ image\ 2.jpg);
+    background-size: cover;
+}
+button{
+    width: 250px;
+    border-radius: 10px;
+    color: rgb(196, 199, 203);
+  background-image: url(background\ image\ 1.jpg);
+  background-size: cover;
+}
+    </style>
+</head>
+<body>
+   
+        <div class="box">
+             <form action="login page"> 
+            <header><h1>login</h1></header>
+            <label for="Username">Username:</label>
+            <input type="email" name="Username" id="Username" required placeholder="Username">
+            <br><br>
+            <label for="Password">Password:</label>
+            <input type="Password" name="Password" id="Password" required placeholder="Password">
+            <br><br>
+    <span> <input type="checkbox"> <label for="">Remember me</label>    <a href="http://127.0.0.1:5500/loginpage/forgetton%20password.html">forgotton password?</a> </span>
+            <br><br>
+            <button><a href="http://127.0.0.1:5500/loginpage/login%20response.html">login</a></button>
+            <br>
+            <span><h5>If you dont have an account <a href="http://127.0.0.1:5500/loginpage/register.html">Register here.</a>   </h5> </span>
+         </form>
+        </div>
+   
+</body>
+</html>
