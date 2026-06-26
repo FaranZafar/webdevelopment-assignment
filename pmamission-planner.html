@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMA Tactical Prep Terminal — joinpakarmy.gov.pk Syllabus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #eae6da;
+    --ink-dim: #a7a596;
+    --bg-deep: #121815;
+    --bg-panel: #1b221e;
+    --bg-panel-raised: #222d27;
+    --line: #323d37;
+    --olive: #7c8f5f;
+    --olive-bright: #9cb17a;
+    --amber: #cca14e;
+    --amber-dim: #8f6f34;
+    --green: #4f7e55;
+    --green-dim: #2f3c2b;
+    --red: #a44333;
+    --stamp: #cca14e;
+    --radius: 4px;
+    --accent: #2e624c;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+  body {
+    background:
+      radial-gradient(circle at 10% 0%, rgba(156,177,122,0.06), transparent 50%),
+      radial-gradient(circle at 90% 90%, rgba(204,161,78,0.04), transparent 50%),
+      var(--bg-deep);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--amber); color: #121815; }
+
+  /* Scrollbar Customization */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--line); border-radius: var(--radius); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--olive-bright); }
+
+  /* Top tactical briefing banner */
+  .briefing {
+    border-bottom: 2px solid var(--line);
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.01) 0 2px, transparent 2px 14px),
+      var(--bg-panel);
+    padding: 24px clamp(20px, 4vw, 56px) 20px;
+    position: relative;
+  }
+  .briefing-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand-mark {
+    width: 48px; height: 48px;
+    border: 2px solid var(--olive-bright);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--olive-bright);
+    background: rgba(156,177,122,0.1);
+    flex-shrink: 0;
+  }
+  .brand h1 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .brand .eyebrow {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  .countdown-stamp {
+    text-align: center;
+    border: 2px solid var(--stamp);
+    border-radius: 6px;
+    padding: 8px 20px;
+    transform: rotate(-1.5deg);
+    position: relative;
+    background: rgba(204,161,78,0.03);
+  }
+  .countdown-stamp::before {
+    content: "";
+    position: absolute; inset: 3px;
+    border: 1px dashed rgba(204,161,78,0.3);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+  .countdown-stamp .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--stamp);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .countdown-stamp .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber-dim);
+    margin-top: 3px;
+  }
+
+  /* Layout Structure */
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px clamp(20px, 4vw, 56px) 80px;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 1024px) {
+    .wrap { grid-template-columns: 1fr; }
+  }
+
+  /* Panels styling */
+  .panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+    height: fit-content;
+  }
+  .panel-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .panel-head .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--bg-deep);
+    background: var(--olive-bright);
+    padding: 2px 7px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+  .panel-head h2 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* Form Elements */
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--olive-bright);
+    margin-bottom: 6px;
+  }
+  .field .hint {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ink-dim);
+    margin-top: 4px;
+  }
+  .field input, .field select {
+    width: 100%;
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink);
+    padding: 10px 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .field input::placeholder { color: #4b5850; }
+  .field input:focus, .field select:focus {
+    outline: none;
+    border-color: var(--olive-bright);
+    box-shadow: 0 0 0 3px rgba(156,177,122,0.15);
+  }
+  .field input[type="date"] { color-scheme: dark; }
+
+  /* Tab toggles */
+  .mode-toggle {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 18px;
+    padding: 4px;
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .mode-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--ink-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .15s ease;
+  }
+  .mode-btn:hover { color: var(--ink); }
+  .mode-btn.active {
+    background: var(--olive-bright);
+    color: var(--bg-deep);
+    font-weight: 700;
+  }
+
+  /* Syllabus summary block */
+  .syllabus-summary {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--ink-dim);
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--olive-bright);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+  }
+
+  .subject-hour-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .subject-hour-row .s-name {
+    flex: 1;
+    font-size: 0.85rem;
+    color: var(--ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .subject-hour-row input {
+    width: 70px;
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink);
+    padding: 6px 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    border-radius: var(--radius);
+    padding: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary {
+    background: var(--olive-bright);
+    color: var(--bg-deep);
+  }
+  .btn-primary:hover { filter: brightness(1.1); }
+  .btn-secondary {
+    background: var(--amber);
+    color: var(--bg-deep);
+  }
+  .btn-secondary:hover { filter: brightness(1.1); }
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.03); border-color: var(--ink-dim); }
+
+  /* Progress panels */
+  .progress-panel { margin-bottom: 20px; }
+  .meter {
+    height: 8px;
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--olive), var(--olive-bright));
+    width: 0%;
+    transition: width .4s cubic-bezier(0.1, 0.8, 0.2, 1);
+  }
+  .progress-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-dim);
+  }
+  .progress-row .pct {
+    color: var(--olive-bright);
+    font-weight: 700;
+  }
+
+  .category-meters {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .category-meter-row .cmr-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 3px;
+  }
+  .category-meter-row .cmr-label .cmr-pct { color: var(--olive-bright); }
+  .meter.mini { height: 5px; margin-bottom: 0; border: none; }
+
+  /* Tactical Schedule Output styling */
+  .timeline-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .timeline-head h2 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .reset-link {
+    background: transparent;
+    border: none;
+    color: var(--red);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+  }
+  .reset-link:hover { border-color: var(--red); background: rgba(164,67,51,0.08); }
+
+  /* Day block layout */
+  .day-list { display: flex; flex-direction: column; gap: 10px; }
+  .day-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--amber-dim);
+    border-radius: var(--radius);
+    padding: 16px;
+    transition: all .15s ease;
+  }
+  .day-card:hover { background: var(--bg-panel-raised); }
+  .day-card.done {
+    border-left-color: var(--green);
+    background: linear-gradient(90deg, rgba(79,126,85,0.05), transparent 45%);
+  }
+  .day-card.phase-boundary {
+    border-top: 2px dashed var(--olive-bright);
+  }
+
+  .day-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .day-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .day-phase-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--amber);
+    text-transform: uppercase;
+    border: 1px solid rgba(204,161,78,0.3);
+    padding: 1px 6px;
+    border-radius: 2px;
+  }
+
+  .subject-row-list { display: flex; flex-direction: column; gap: 5px; }
+  .subject-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .subject-row.s-done {
+    border-color: var(--green-dim);
+    background: rgba(79,126,85,0.05);
+  }
+  .subject-row-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  .subject-row-name {
+    font-size: 0.85rem;
+    color: var(--ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .subject-row.s-done .subject-row-name {
+    text-decoration: line-through;
+    color: var(--ink-dim);
+  }
+  .subject-row-hours {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--olive-bright);
+    flex-shrink: 0;
+    background: rgba(156,177,122,0.08);
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+
+  /* Detailed Syllabus Checklist */
+  .syllabus-codex {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .codex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .codex-category-box {
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+  .codex-category-box h3 {
+    margin: 0 0 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--olive-bright);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .codex-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .codex-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background .12s ease;
+  }
+  .codex-item:hover { background: rgba(255,255,255,0.02); }
+  .codex-item input[type="checkbox"] {
+    margin-top: 3px;
+    cursor: pointer;
+    accent-color: var(--olive-bright);
+  }
+  .codex-item-label {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--ink-dim);
+  }
+  .codex-item.checked .codex-item-label {
+    text-decoration: line-through;
+    color: #4b5850;
+  }
+
+  /* Tactical Training AI Room */
+  .ai-training-room {
+    grid-column: 1 / -1;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--amber);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .training-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .training-grid { grid-template-columns: 1fr; }
+  }
+  .ai-console-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+  .ai-console-header h3 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+  }
+  .ai-drill-panel {
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .drill-quiz-window {
+    background: #0d1210;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  .quiz-q-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--amber);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .quiz-question {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .quiz-opt-btn {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all .15s ease;
+  }
+  .quiz-opt-btn:hover {
+    background: var(--bg-panel-raised);
+    border-color: var(--olive-bright);
+  }
+  .quiz-opt-btn.correct {
+    background: rgba(79,126,85,0.15) !important;
+    border-color: var(--green) !important;
+    color: var(--ink) !important;
+  }
+  .quiz-opt-btn.wrong {
+    background: rgba(164,67,51,0.15) !important;
+    border-color: var(--red) !important;
+    color: var(--ink) !important;
+  }
+  .quiz-explanation {
+    margin-top: 14px;
+    padding: 10px;
+    border-left: 2px solid var(--olive-bright);
+    background: rgba(255,255,255,0.01);
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    line-height: 1.4;
+  }
+
+  /* Empty / Setup view */
+  .empty {
+    border: 1.5px dashed var(--line);
+    border-radius: var(--radius);
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 0.9rem;
+  }
+  .empty .glyph {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--amber);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* Interactive Elements / Controls */
+  .intake-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin-top: 6px;
+    display: inline-block;
+    background: rgba(204,161,78,0.05);
+  }
+
+  /* Toasts */
+  .toast {
+    position: fixed;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--bg-panel-raised);
+    border: 1.5px solid var(--olive-bright);
+    color: var(--ink);
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .loader-spinner {
+    border: 2px solid var(--line);
+    border-top: 2px solid var(--amber);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+  <div class="briefing">
+    <div class="briefing-top">
+      <div class="brand">
+        <div class="brand-mark">PMA</div>
+        <div>
+          <h1>PMA Tactical Prep Terminal</h1>
+          <span class="eyebrow">Pakistan Army Long Course Syllabus Codex</span>
+        </div>
+      </div>
+      <div class="countdown-stamp" id="countdownStamp">
+        <div class="num" id="countdownNum">—</div>
+        <div class="lbl">Days to D-Day</div>
+      </div>
+    </div>
+    <div id="intakeBadgeWrap" style="text-align:right; max-width:1280px; margin: 0 auto;"></div>
+  </div>
+
+  <div class="wrap">
+    <!-- Left panel: Tactical Parameters -->
+    <div class="panel">
+      <div class="panel-head">
+        <span class="tag">01</span>
+        <h2>Tactical Parameters</h2>
+      </div>
+
+      <div class="mode-toggle" role="tablist">
+        <button type="button" class="mode-btn active" id="modeManualBtn" onclick="setMode('manual')">Manual Setup</button>
+        <button type="button" class="mode-btn" id="modeSyllabusBtn" onclick="setMode('syllabus')">Army Syllabus</button>
+      </div>
+
+      <form id="plannerForm">
+        <!-- Manual mode subjects setup -->
+        <div id="manualModeFields">
+          <div class="field">
+            <label for="subjects">Operational Focus Areas</label>
+            <input type="text" id="subjects" placeholder="English, General Knowledge, Verbal-Intelligence">
+            <span class="hint">Comma-separated subjects. Each one will form a daily training focus.</span>
+          </div>
+          <div class="field" id="subjectHoursField" style="display:none;">
+            <label>Daily Allocation per Focus</label>
+            <div id="subjectHoursContainer"></div>
+            <span class="hint">Total of <strong id="totalHoursDisplay">0</strong> hrs / day, generated recursively to target date.</span>
+          </div>
+        </div>
+
+        <!-- Syllabus mode subjects setup -->
+        <div id="syllabusModeFields" style="display:none;">
+          <div class="field">
+            <label>Campaign Strategy</label>
+            <div class="syllabus-summary">
+              Generates a highly structured, 4-phase boot camp across all official testing subjects from <strong>joinpakarmy.gov.pk</strong> guidelines:
+              <ul style="margin: 6px 0; padding-left: 20px;">
+                <li><strong>Phase 1: Foundation (35%)</strong></li>
+                <li><strong>Phase 2: Tactical Reinforcement (35%)</strong></li>
+                <li><strong>Phase 3: Ultimate Combat Phase (20%)</strong></li>
+                <li><strong>Phase 4: Revision &amp; Assessment (10%)</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <label>Daily Training Allocation</label>
+            <div class="subject-hour-row" data-subject="Intelligence">
+              <span class="s-name">Intelligence (Verbal / Non-Verbal)</span>
+              <input type="number" min="0.5" step="0.5" value="1.5" id="hoursIntel">
+              <span class="s-unit">hrs</span>
+            </div>
+            <div class="subject-hour-row" data-subject="Academic">
+              <span class="s-name">Academic (GK, Eng, Isl, PakSt)</span>
+              <input type="number" min="0.5" step="0.5" value="2.0" id="hoursAcad">
+              <span class="s-unit">hrs</span>
+            </div>
+            <div class="subject-hour-row" data-subject="Physical">
+              <span class="s-name">Physical (Running, Strength)</span>
+              <input type="number" min="0.5" step="0.5" value="1.0" id="hoursPhys">
+              <span class="s-unit">hrs</span>
+            </div>
+            <div class="subject-hour-row" data-subject="ISSB">
+              <span class="s-name">ISSB (Psychological, GTO, Interview)</span>
+              <input type="number" min="0.5" step="0.5" value="1.5" id="hoursIssb">
+              <span class="s-unit">hrs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="intakeTarget">Target Intake Campaign</label>
+          <select id="intakeTarget">
+            <option value="custom">Manual Targeted Deployment</option>
+            <option value="pma_158">PMA Long Course 158 (Autumn 2026)</option>
+            <option value="pma_159">PMA Long Course 159 (Spring 2027)</option>
+          </select>
+          <span class="hint" id="intakeHint">Set your customized target test date below.</span>
+        </div>
+
+        <div class="field">
+          <label for="examDate">D-Day Target Date</label>
+          <input type="date" id="examDate" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Compile Deployment Plan</button>
+      </form>
+      <button id="saveCloudBtn" class="btn btn-ghost" style="display:none; margin-top: 10px;" onclick="saveToCloud()">Export State</button>
+    </div>
+
+    <!-- Right panel: Mission Status & Timeline -->
+    <div>
+      <div class="panel progress-panel">
+        <div class="panel-head" style="margin-bottom:14px; padding-bottom:12px;">
+          <span class="tag">02</span>
+          <h2>Combat Readiness Status</h2>
+        </div>
+        <div class="meter"><div class="meter-fill" id="progressBar"></div></div>
+        <div class="progress-row">
+          <span id="progressText">0 of 0 assignments finalized</span>
+          <span class="pct" id="progressPct">0%</span>
+        </div>
+        <div id="categoryMeters" class="category-meters" style="display:none;"></div>
+      </div>
+
+      <div class="timeline-head">
+        <h2>Daily Orders Timeline</h2>
+        <button class="reset-link" id="clearAllBtn" style="display:none;" onclick="clearEntireTimeline()">Terminate Schedule</button>
+      </div>
+
+      <div id="scheduleOutput">
+        <div class="empty">
+          <span class="glyph">System Standby</span>
+          Enter your parameters and compile your target timeline.
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Tactical Training Room -->
+    <div class="ai-training-room">
+      <div class="ai-console-header">
+        <span class="brand-mark" style="width:30px; height:30px; font-size:12px; border-color:var(--amber); color:var(--amber); background:rgba(204,161,78,0.05);">AI</span>
+        <h3>AI Tactical Training Simulator</h3>
+      </div>
+      <div class="training-grid">
+        <div>
+          <div class="field">
+            <label for="aiTopicSelect">Select Drill Target</label>
+            <select id="aiTopicSelect">
+              <optgroup label="Intelligence (Verbal)">
+                <option value="Number & Letter Series Completion">Series Completion</option>
+                <option value="Analogies & Odd-Man-Out">Analogies &amp; Odd-man-out</option>
+                <option value="Coding-Decoding & Word Jumbles">Coding / Decoding</option>
+                <option value="Direction Sense & Common Sense Tests">Direction &amp; Common Sense</option>
+              </optgroup>
+              <optgroup label="Intelligence (Non-Verbal)">
+                <option value="Non-Verbal Matrix Completion & Shapes">Matrix &amp; Shapes completion</option>
+                <option value="Non-Verbal Folded Paper & Embedded Figures">Paper Folding &amp; Figures</option>
+              </optgroup>
+              <optgroup label="Academic Syllabus">
+                <option value="English Tenses, Direct/Indirect and Active/Passive">English: Grammar &amp; Voice</option>
+                <option value="Pakistan History (1857 to 1947 Movement)">Pakistan Movement (1857-1947)</option>
+                <option value="Pakistan Post-Partition Constitutional History">Constitutions &amp; Post-Partition</option>
+                <option value="Islamic Ghazwat, Life of Prophet and Quranic Facts">Islamic Studies (Seerah &amp; Ghazwat)</option>
+                <option value="General Knowledge: Capitals, Geography, UN & World Conflicts">World Geography &amp; GK</option>
+                <option value="Mathematics: Percentage, Ratios, Speed-Time-Distance">Math: Percentage &amp; Speed-Time</option>
+              </optgroup>
+              <optgroup label="ISSB Psychological & GTO">
+                <option value="Situation Reaction Test (SRT) and Word Association (WAT)">Situation Reaction Test (SRT)</option>
+                <option value="GTO Tasks, Command Tasks and Group Planning Exercises">GTO Group Planning &amp; Tasks</option>
+              </optgroup>
+            </select>
+          </div>
+          <button type="button" class="btn btn-secondary" id="generateDrillBtn" onclick="generateAIDrill()">Initiate Combat Drill</button>
+          <div style="margin-top: 10px; font-size: 0.72rem; color: var(--ink-dim); line-height: 1.4;">
+            Utilizes custom military assessment simulation queries via Gemini 3.1 Flash. Make sure your network connection is active.
+          </div>
+        </div>
+
+        <div class="drill-quiz-window" id="quizWindow">
+          <div id="quizLoader" style="display:none; text-align:center; margin:auto;">
+            <div class="loader-spinner"></div>
+            <div style="margin-top:10px; font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--amber);">Accessing Tactical Server...</div>
+          </div>
+          <div id="quizContent">
+            <div class="empty" style="border: none; padding: 20px 0;">
+              <span class="glyph">Ready for Simulation</span>
+              Select a focus area on the left and start the training drill.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Syllabus Codex Checklist -->
+    <div class="syllabus-codex">
+      <div class="panel-head" style="border-bottom-color: var(--line);">
+        <span class="tag">03</span>
+        <h2>Comprehensive joinpakarmy.gov.pk Syllabus Codex</h2>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--ink-dim); margin-top: -10px; margin-bottom: 20px;">
+        Track your absolute coverage of the official syllabus items as specified by the Pakistan Army recruiting guidelines. Completed elements sync automatically with your readiness indicators.
+      </p>
+      
+      <div class="codex-grid">
+        <!-- Verbal & Non-Verbal Intelligence -->
+        <div class="codex-category-box">
+          <h3>Intelligence (Verbal)</h3>
+          <div class="codex-item-list" id="codex-verbal"></div>
+        </div>
+        <div class="codex-category-box">
+          <h3>Intelligence (Non-Verbal)</h3>
+          <div class="codex-item-list" id="codex-nonverbal"></div>
+        </div>
+        <!-- Academics -->
+        <div class="codex-category-box">
+          <h3>English Core</h3>
+          <div class="codex-item-list" id="codex-english"></div>
+        </div>
+        <div class="codex-category-box">
+          <h3>Math Core</h3>
+          <div class="codex-item-list" id="codex-math"></div>
+        </div>
+        <div class="codex-category-box">
+          <h3>Pak Studies / GK</h3>
+          <div class="codex-item-list" id="codex-pakstudies"></div>
+        </div>
+        <div class="codex-category-box">
+          <h3>Islamic Studies</h3>
+          <div class="codex-item-list" id="codex-islamiat"></div>
+        </div>
+        <!-- Physical & ISSB -->
+        <div class="codex-category-box">
+          <h3>Physical Standards</h3>
+          <div class="codex-item-list" id="codex-physical"></div>
+        </div>
+        <div class="codex-category-box">
+          <h3>ISSB Battery</h3>
+          <div class="codex-item-list" id="codex-issb"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+  // Complete officially aligned PMA test database for Join Pakistan Army requirements
+  const OFFICIAL_SYLLABUS_CODEX = {
+    verbal: [
+      "Number Series (Arithmetic progression, squares, prime sequences)",
+      "Letter & Alphabet Series Completion (Position value leaps)",
+      "Analogy Tests (Find corresponding relationships)",
+      "Odd-Man-Out Classification (Find the different element)",
+      "Coding & Decoding (Letter shift, substitution codes)",
+      "Direction Sense Tests (Compass direction tracking)",
+      "Blood Relations & Family Tree calculations",
+      "Age Problems & Comparative Statements",
+      "Common Sense & Logical Judgment scenarios",
+      "Jumbled Words & Spelling rearrangement questions",
+      "Days of the Week & Calendar logic cycles"
+    ],
+    nonverbal: [
+      "Non-Verbal Figure Series Completion",
+      "Figure Analogies (Find matching spatial changes)",
+      "Matrix Completion (3x3 pattern matrix prediction)",
+      "Classification & Odd-Man-Out Shapes",
+      "Paper Folding, Cutting & Unfolding templates",
+      "Embedded Figures & Shape completion recognition",
+      "Mirror Images & Water Reflections logic"
+    ],
+    english: [
+      "Parts of Speech & Advanced Word Function",
+      "English Tenses (Present, Past, Future structures)",
+      "Active and Passive Voice Conversion rules",
+      "Direct & Indirect Speech / Narration rules",
+      "Prepositions (Appropriate and fixed prepositions)",
+      "Synonyms & Antonyms (Military-oriented vocabulary)",
+      "Idioms & Phrases (Frequently occurring items)",
+      "Sentence Correction & Common Errors",
+      "Comprehension Passages & critical interpretation"
+    ],
+    math: [
+      "Percentages (Formulation, changes, comparisons)",
+      "Ratio and Proportions (Value divisions, maps scales)",
+      "Algebraic Equations (Linear equations, substitution)",
+      "Averages (Weighted, series averages calculations)",
+      "Time, Speed and Distance (Train speed, relative speed)",
+      "Basic Geometry (Area, perimeter of simple figures)",
+      "Sets, Fractions, Decimals, and LCM/HCF basics"
+    ],
+    pakstudies: [
+      "Pakistan Movement Timeline (1857 War to 1947 Independence)",
+      "Simla Deputation, Khilafat, & Delhi Proposals",
+      "Nehru Report & Quaid-e-Azam's 14 Points (1857-1929)",
+      "Pakistan Resolution 1940 & major round table summits",
+      "Post-Independence Constitutional History (1956, 1962, 1973)",
+      "Major Wars of Pakistan (1965, 1971, Kargil Conflict)",
+      "Nishan-e-Haider Recipients (11 military heroes biography)",
+      "Geography of Pakistan (Rivers, Dams, Mountains, Glaciers)",
+      "CPEC, International Borders (LOC, Durand Line, Working Boundary)",
+      "Modern Military Operations (Zarb-e-Azb, Radd-ul-Fasaad)"
+    ],
+    islamiat: [
+      "Pillars of Islam (Arkan-e-Islam facts, dates, details)",
+      "Quranic Facts (Revelation, Surahs, Ayats, major commands)",
+      "Seerah of Prophet Muhammad PBUH (Makkan vs Madinan period)",
+      "Major Ghazwat in Islamic History (Badr, Uhud, Khandaq, Khyber)",
+      "Ghazwah Tabuk, Hunain & Treaty of Hudaibiyah timeline",
+      "Khulafa-e-Rashideen (Achievements & reigns of 4 Caliphs)",
+      "Hadith collection books (Sihah-e-Sittah compilers)",
+      "Famous Companions & Islamic terminology definitions"
+    ],
+    physical: [
+      "1.6 KM (1 Mile) Run: Target under 8 minutes",
+      "Pull-ups (Chin-ups): 3 mandatory reps in 2 minutes",
+      "Push-ups: 15 mandatory reps in 2 minutes",
+      "Sit-ups: 20 mandatory reps in 2 minutes",
+      "Ditch Crossing: Clear 7'4\" x 7'4\" x 4 feet depth"
+    ],
+    issb: [
+      "Screening Battery: Re-testing Intelligence and MAT",
+      "Word Association Test (WAT): Rapid response psychology",
+      "Thematic Apperception Test (TAT): Picture-story writing",
+      "Sentence Completion (SCT) in English & Urdu",
+      "Self-Description (SD) - SWOT & personality appraisal",
+      "Group Discussion & Group Planning Exercise (GPE)",
+      "Progressive Group Task (PGT) & Half Group Task (HGT)",
+      "Individual Obstacles & Lecturette presentations",
+      "Command Tasks (Handling tactical scenarios)",
+      "Final Deputy President & President psychological interview"
+    ]
+  };
+
+  // Comprehensive sequenced timeline compilation plan based on joinpakarmy website
+  const CAMPAIGN_TOPICS = [
+    // Phase 1 (Foundation - 35%)
+    { phase: "Phase 1: Foundation", category: "Intelligence", name: "Verbal: Number & Letter Series Completion" },
+    { phase: "Phase 1: Foundation", category: "Academic", name: "English: Parts of Speech & Sentence Patterns" },
+    { phase: "Phase 1: Foundation", category: "Physical", name: "Stamina: 1.6 KM Jogging & Agility Stretch" },
+    { phase: "Phase 1: Foundation", category: "ISSB", name: "Self-Appraisal: Word Association Test (WAT) Rules" },
+    { phase: "Phase 1: Foundation", category: "Academic", name: "Pak Studies: War of 1817 to partition of Bengal 1905" },
+    { phase: "Phase 1: Foundation", category: "Intelligence", name: "Non-Verbal: Shape Series & Pattern Matching" },
+    { phase: "Phase 1: Foundation", category: "Academic", name: "Math: Percentages and Fractions calculation" },
+    { phase: "Phase 1: Foundation", category: "Academic", name: "Islamiat: Pillars of Islam & Islamic Terminology" },
+    { phase: "Phase 1: Foundation", category: "Physical", name: "Strength: Basic Push-up and Sit-up form drills" },
+    { phase: "Phase 1: Foundation", category: "ISSB", name: "Psychology: Sentence Completion tactics" },
+
+    // Phase 2 (Tactical Reinforcement - 35%)
+    { phase: "Phase 2: Tactical Reinforcement", category: "Intelligence", name: "Verbal: Analogies & Classification tests" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "Academic", name: "English: Tenses (Present, Past, Future structures)" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "Physical", name: "Timed Run: 1.6 KM pace tracking" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "ISSB", name: "GTO: Group Discussion topic preparation" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "Academic", name: "Pak Studies: Pakistan Movement 1906 to 1940 Resolution" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "Intelligence", name: "Non-Verbal: 3x3 Matrix Completion exercises" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "Academic", name: "Math: Ratio & Proportion exercises" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "Academic", name: "Islamiat: Ghazwah Badr & Seerah Makkan Era" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "Physical", name: "Stamina: Pull-ups / Chin-ups volume training" },
+    { phase: "Phase 2: Tactical Reinforcement", category: "ISSB", name: "Psychology: Picture story writing (TAT)" },
+
+    // Phase 3 (Ultimate Combat Phase - 20%)
+    { phase: "Phase 3: Combat Readiness", category: "Intelligence", name: "Verbal: Coding-Decoding & Direction Sense" },
+    { phase: "Phase 3: Combat Readiness", category: "Academic", name: "English: Active/Passive & Direct/Indirect conversions" },
+    { phase: "Phase 3: Combat Readiness", category: "Physical", name: "Timed Run: 1.6 KM pacing under 8:30" },
+    { phase: "Phase 3: Combat Readiness", category: "ISSB", name: "GTO: Group Planning Exercise (GPE) scenarios" },
+    { phase: "Phase 3: Combat Readiness", category: "Academic", name: "Pak Studies: Constitutions & post-partition milestones" },
+    { phase: "Phase 3: Combat Readiness", category: "Academic", name: "Islamiat: Ghazwah Uhud, Khandaq & Seerah Madinan Era" },
+    { phase: "Phase 3: Combat Readiness", category: "Academic", name: "Math: Averages, Speed-Time-Distance problems" },
+    { phase: "Phase 3: Combat Readiness", category: "Physical", name: "Agility: Ditch crossing leap & sprint intervals" },
+    { phase: "Phase 3: Combat Readiness", category: "ISSB", name: "Interview: Officer-Like-Qualities (OLQs) and posture" },
+
+    // Phase 4 (Revision & Assessment - 10%)
+    { phase: "Phase 4: Revision & Testing", category: "Intelligence", name: "Intelligence Test Mock Drill (100 MCQs)" },
+    { phase: "Phase 4: Revision & Testing", category: "Academic", name: "Academic Full Test Mock Simulator (English, GK, Math, Isl, PakSt)" },
+    { phase: "Phase 4: Revision & Testing", category: "Physical", name: "Full Physical Assessment: Running, Pullups, Situps, Pushups" },
+    { phase: "Phase 4: Revision & Testing", category: "ISSB", name: "Final Interview & Situation Reaction simulation" }
+  ];
+
+  let studyPlan = [];
+  let currentMode = 'manual';
+  let checklistState = {};
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Load local storage states
+    const cachedPlan = localStorage.getItem('pma_studyPlan');
+    if (cachedPlan) {
+      studyPlan = JSON.parse(cachedPlan);
+      toggleActionButtons(true);
+      renderSchedule();
+    }
+    
+    const cachedChecklist = localStorage.getItem('pma_checklist');
+    if (cachedChecklist) {
+      checklistState = JSON.parse(cachedChecklist);
+    }
+    
+    buildSyllabusChecklist();
+    updateIntakeBadge(localStorage.getItem('pma_intakeTag') || 'custom');
+
+    const dateInput = document.getElementById('examDate');
+    dateInput.addEventListener('change', updateCountdownFromInput);
+
+    const subjectsInput = document.getElementById('subjects');
+    subjectsInput.addEventListener('input', debounce(renderSubjectHourInputs, 350));
+
+    document.getElementById('intakeTarget').addEventListener('change', updateIntakeTarget);
+  });
+
+  function setMode(mode) {
+    currentMode = mode;
+    document.getElementById('modeManualBtn').classList.toggle('active', mode === 'manual');
+    document.getElementById('modeSyllabusBtn').classList.toggle('active', mode === 'syllabus');
+    document.getElementById('manualModeFields').style.display = mode === 'manual' ? 'block' : 'none';
+    document.getElementById('syllabusModeFields').style.display = mode === 'syllabus' ? 'block' : 'none';
+
+    const subjectsField = document.getElementById('subjects');
+    if (mode === 'syllabus') {
+      subjectsField.removeAttribute('required');
+    } else {
+      subjectsField.setAttribute('required', 'required');
+    }
+  }
+
+  function updateIntakeTarget() {
+    const val = document.getElementById('intakeTarget').value;
+    const hint = document.getElementById('intakeHint');
+    const examDateInput = document.getElementById('examDate');
+    
+    if (val === 'pma_158') {
+      hint.innerHTML = '<strong>PMA 158 Long Course:</strong> Registration historically starts around October-November 2026. Target exam date auto-set to November 15, 2026.';
+      examDateInput.value = '2026-11-15';
+    } else if (val === 'pma_159') {
+      hint.innerHTML = '<strong>PMA 159 Long Course:</strong> Registration opens April-May 2027. Target exam date auto-set to May 10, 2027.';
+      examDateInput.value = '2027-05-10';
+    } else {
+      hint.textContent = "Set your customized target test date below.";
+    }
+    updateCountdownFromInput();
+  }
+
+  function debounce(fn, wait) {
+    let t;
+    return function(...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
+
+  function buildSyllabusChecklist() {
+    Object.keys(OFFICIAL_SYLLABUS_CODEX).forEach(category => {
+      const container = document.getElementById(`codex-${category}`);
+      if (!container) return;
+      container.innerHTML = '';
+
+      OFFICIAL_SYLLABUS_CODEX[category].forEach((item, index) => {
+        const key = `${category}_${index}`;
+        const isChecked = checklistState[key] || false;
+
+        const div = document.createElement('div');
+        div.className = `codex-item ${isChecked ? 'checked' : ''}`;
+        div.dataset.key = key;
+        div.onclick = (e) => {
+          if (e.target.tagName !== 'INPUT') {
+            const cb = div.querySelector('input[type="checkbox"]');
+            cb.checked = !cb.checked;
+            toggleChecklistItem(key, cb.checked);
+          }
+        };
+
+        div.innerHTML = `
+          <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleChecklistItem('${key}', this.checked)">
+          <span class="codex-item-label">${item}</span>
+        `;
+        container.appendChild(div);
+      });
+    });
+    updateChecklistMastery();
+  }
+
+  function toggleChecklistItem(key, checked) {
+    checklistState[key] = checked;
+    localStorage.setItem('pma_checklist', JSON.stringify(checklistState));
+    
+    const card = document.querySelector(`.codex-item[data-key="${key}"]`);
+    if (card) {
+      card.classList.toggle('checked', checked);
+      const cb = card.querySelector('input[type="checkbox"]');
+      if (cb) cb.checked = checked;
+    }
+    updateChecklistMastery();
+    renderSchedule(); // update overall status bar if connected
+    playTacticalSound(checked ? 'confirm' : 'cancel');
+  }
+
+  function updateChecklistMastery() {
+    // update checklist category headers with fractional metrics
+    Object.keys(OFFICIAL_SYLLABUS_CODEX).forEach(category => {
+      const items = OFFICIAL_SYLLABUS_CODEX[category];
+      let done = 0;
+      items.forEach((_, index) => {
+        if (checklistState[`${category}_${index}`]) done++;
+      });
+      const box = document.getElementById(`codex-${category}`)?.parentElement;
+      if (box) {
+        const h3 = box.querySelector('h3');
+        const countSpan = h3.querySelector('.header-metric') || document.createElement('span');
+        countSpan.className = 'header-metric';
+        countSpan.style.fontSize = '0.72rem';
+        countSpan.style.color = 'var(--amber)';
+        countSpan.textContent = `[${done}/${items.length}]`;
+        h3.appendChild(countSpan);
+      }
+    });
+  }
+
+  function renderSubjectHourInputs() {
+    const subjectsVal = document.getElementById('subjects').value;
+    const subjects = subjectsVal.split(',').map(s => s.trim()).filter(s => s !== "");
+    const field = document.getElementById('subjectHoursField');
+    const container = document.getElementById('subjectHoursContainer');
+
+    if (subjects.length === 0) {
+      field.style.display = 'none';
+      container.innerHTML = '';
+      return;
+    }
+
+    const existing = {};
+    container.querySelectorAll('.subject-hour-row').forEach(row => {
+      const name = row.dataset.subject;
+      const val = row.querySelector('input').value;
+      existing[name] = val;
+    });
+
+    container.innerHTML = '';
+    subjects.forEach((name, i) => {
+      const row = document.createElement('div');
+      row.className = 'subject-hour-row';
+      row.dataset.subject = name;
+      const defaultVal = existing[name] !== undefined ? existing[name] : 1.5;
+      row.innerHTML = `
+        <span class="s-name">${escapeHtml(name)}</span>
+        <input type="number" min="0.5" step="0.5" value="${defaultVal}">
+        <span class="s-unit">hrs</span>
+      `;
+      container.appendChild(row);
+    });
+
+    field.style.display = 'block';
+    container.addEventListener('input', updateTotalHoursDisplay);
+    updateTotalHoursDisplay();
+  }
+
+  function updateTotalHoursDisplay() {
+    const inputs = document.querySelectorAll('#subjectHoursContainer input');
+    let total = 0;
+    inputs.forEach(inp => total += parseFloat(inp.value) || 0);
+    document.getElementById('totalHoursDisplay').textContent = total.toFixed(1);
+  }
+
+  function updateCountdownFromInput() {
+    const val = document.getElementById('examDate').value;
+    if (!val) return;
+    const examDate = new Date(val);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const diff = Math.ceil((examDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+    updateCountdown(diff > 0 ? diff : null);
+  }
+
+  function updateCountdown(days) {
+    const num = document.getElementById('countdownNum');
+    num.textContent = (days && days > 0) ? days : '—';
+  }
+
+  function updateIntakeBadge(tag) {
+    const wrap = document.getElementById('intakeBadgeWrap');
+    if (tag === 'pma_158') {
+      wrap.innerHTML = `<span class="intake-badge">Target: 158 LC Deployment</span>`;
+    } else if (tag === 'pma_159') {
+      wrap.innerHTML = `<span class="intake-badge">Target: 159 LC Deployment</span>`;
+    } else {
+      wrap.innerHTML = '';
+    }
+  }
+
+  document.getElementById('plannerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const examDateVal = document.getElementById('examDate').value;
+    const examDate = new Date(examDateVal);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const timeDiff = examDate.getTime() - today.getTime();
+    const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (!examDateVal || daysRemaining <= 0) {
+      showToast('Action Denied: Pick a target date in the future.');
+      return;
+    }
+
+    const intakeTag = document.getElementById('intakeTarget').value;
+
+    if (currentMode === 'syllabus') {
+      compileSyllabusPlan(daysRemaining, today);
+    } else {
+      const subjectsVal = document.getElementById('subjects').value;
+      const subjects = subjectsVal.split(',').map(s => s.trim()).filter(s => s !== "");
+      if (subjects.length === 0) {
+        showToast('Configuration Error: Add at least one Focus Area.');
+        return;
+      }
+      compileManualPlan(daysRemaining, today, subjects);
+    }
+
+    localStorage.setItem('pma_studyPlan', JSON.stringify(studyPlan));
+    localStorage.setItem('pma_intakeTag', intakeTag);
+    
+    renderSchedule();
+    toggleActionButtons(true);
+    updateCountdown(daysRemaining);
+    updateIntakeBadge(intakeTag);
+    playTacticalSound('compile');
+    showToast(`Combat strategy established — ${daysRemaining} days mapped.`);
+  });
+
+  function compileManualPlan(daysRemaining, today, subjects) {
+    const hourInputs = document.querySelectorAll('#subjectHoursContainer input');
+    const subjectHours = subjects.map((name, i) => {
+      const val = hourInputs[i] ? parseFloat(hourInputs[i].value) : 1.5;
+      return { name, hours: (val && val > 0) ? val : 1.5 };
+    });
+
+    studyPlan = [];
+    for (let i = 0; i < daysRemaining; i++) {
+      let targetDay = new Date();
+      targetDay.setDate(today.getDate() + i);
+      studyPlan.push({
+        date: targetDay.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }),
+        phase: "Active Operations",
+        subjects: subjectHours.map(s => ({ name: s.name, hours: s.hours, completed: false }))
+      });
+    }
+  }
+
+  function compileSyllabusPlan(daysRemaining, today) {
+    const hours = {
+      Intel: parseFloat(document.getElementById('hoursIntel').value) || 1.5,
+      Acad: parseFloat(document.getElementById('hoursAcad').value) || 2.0,
+      Phys: parseFloat(document.getElementById('hoursPhys').value) || 1.0,
+      Issb: parseFloat(document.getElementById('hoursIssb').value) || 1.5
+    };
+
+    studyPlan = [];
+    const categories = ["Intelligence", "Academic", "Physical", "ISSB"];
+
+    for (let i = 0; i < daysRemaining; i++) {
+      let targetDay = new Date();
+      targetDay.setDate(today.getDate() + i);
+
+      // Distribute campaign phases across remaining timeline proportionally
+      const segmentRatio = i / daysRemaining;
+      let targetPhase = "Phase 1: Foundation";
+      if (segmentRatio >= 0.35 && segmentRatio < 0.70) {
+        targetPhase = "Phase 2: Tactical Reinforcement";
+      } else if (segmentRatio >= 0.70 && segmentRatio < 0.90) {
+        targetPhase = "Phase 3: Combat Readiness";
+      } else if (segmentRatio >= 0.90) {
+        targetPhase = "Phase 4: Revision & Testing";
+      }
+
+      const daySubjects = [];
+      categories.forEach(cat => {
+        // Find topics belonging to current phase and this specific category
+        const catTopics = CAMPAIGN_TOPICS.filter(t => t.phase === targetPhase && t.category === cat);
+        
+        if (catTopics.length > 0) {
+          // Select exactly one topic by cycling through available options per day
+          const topicIndex = i % catTopics.length;
+          const topic = catTopics[topicIndex];
+          
+          let topicHour = 1.0;
+          if (cat === 'Intelligence') topicHour = hours.Intel;
+          else if (cat === 'Academic') topicHour = hours.Acad;
+          else if (cat === 'Physical') topicHour = hours.Phys;
+          else if (cat === 'ISSB') topicHour = hours.Issb;
+
+          daySubjects.push({
+            name: `${topic.category}: ${topic.name}`,
+            hours: topicHour,
+            completed: false,
+            category: topic.category
+          });
+        }
+      });
+
+      studyPlan.push({
+        date: targetDay.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }),
+        phase: targetPhase,
+        subjects: daySubjects
+      });
+    }
+  }
+
+  function renderSchedule() {
+    const container = document.getElementById('scheduleOutput');
+    container.innerHTML = '';
+
+    if (studyPlan.length === 0) {
+      container.innerHTML = `
+        <div class="empty">
+          <span class="glyph">System Standby</span>
+          Enter your parameters and compile your target timeline.
+        </div>`;
+      toggleActionButtons(false);
+      updateOverallProgress(0, 0);
+      renderCategoryProgress({});
+      return;
+    }
+
+    let totalSessions = 0;
+    let completedSessions = 0;
+    const categoryTotals = { Intelligence: {t:0, d:0}, Academic: {t:0, d:0}, Physical: {t:0, d:0}, ISSB: {t:0, d:0} };
+
+    const list = document.createElement('div');
+    list.className = 'day-list';
+
+    let lastPhase = "";
+
+    studyPlan.forEach((day, dayIndex) => {
+      const subjects = day.subjects || [];
+      const dayTotalHours = subjects.reduce((sum, s) => sum + s.hours, 0);
+      const dayDone = subjects.length > 0 && subjects.every(s => s.completed);
+      
+      const isPhaseBoundary = lastPhase !== "" && lastPhase !== day.phase;
+      lastPhase = day.phase;
+
+      subjects.forEach(s => {
+        totalSessions++;
+        if (s.completed) completedSessions++;
+
+        // Track subcategory metrics
+        const cat = s.category || getCategoryFromSubject(s.name);
+        if (cat && categoryTotals[cat]) {
+          categoryTotals[cat].t++;
+          if (s.completed) categoryTotals[cat].d++;
+        }
+      });
+
+      const card = document.createElement('div');
+      card.className = `day-card ${dayDone ? 'done' : ''} ${isPhaseBoundary ? 'phase-boundary' : ''}`;
+
+      const rowsHtml = subjects.map((s, sIndex) => {
+        return `
+          <div class="subject-row ${s.completed ? 's-done' : ''}">
+            <div class="subject-row-info">
+              <span class="subject-row-name">${escapeHtml(s.name)}</span>
+              <span class="subject-row-hours">${s.hours.toFixed(1)} hr</span>
+            </div>
+            <div class="subject-row-actions">
+              <button type="button" class="icon-btn small ${s.completed ? 'undo' : 'complete'}" onclick="toggleSubjectStatus(${dayIndex}, ${sIndex})">
+                ${s.completed ? 'Undo' : 'Finalize'}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      card.innerHTML = `
+        <div class="day-card-head">
+          <span class="day-date">${day.date}</span>
+          <span class="day-phase-badge">${day.phase || "Preparation"}</span>
+        </div>
+        <div class="subject-row-list">${rowsHtml}</div>
+        <div class="day-card-foot">
+          <button type="button" class="icon-btn delete small" onclick="deleteTimelineDay(${dayIndex})">Discard Block</button>
+        </div>
+      `;
+      list.appendChild(card);
+    });
+
+    container.appendChild(list);
+    updateOverallProgress(completedSessions, totalSessions);
+    renderCategoryProgress(categoryTotals);
+  }
+
+  function getCategoryFromSubject(name) {
+    if (name.startsWith('Intelligence:')) return 'Intelligence';
+    if (name.startsWith('Academic:')) return 'Academic';
+    if (name.startsWith('Physical:')) return 'Physical';
+    if (name.startsWith('ISSB:')) return 'ISSB';
+    return null;
+  }
+
+  function toggleSubjectStatus(dayIndex, subjectIndex) {
+    const subj = studyPlan[dayIndex].subjects[subjectIndex];
+    subj.completed = !subj.completed;
+    localStorage.setItem('pma_studyPlan', JSON.stringify(studyPlan));
+    
+    playTacticalSound(subj.completed ? 'confirm' : 'cancel');
+    renderSchedule();
+  }
+
+  function deleteTimelineDay(dayIndex) {
+    if (confirm("Execute command to drop this daily assignment block?")) {
+      studyPlan.splice(dayIndex, 1);
+      localStorage.setItem('pma_studyPlan', JSON.stringify(studyPlan));
+      renderSchedule();
+      showToast('Daily schedule block dropped.');
+    }
+  }
+
+  function clearEntireTimeline() {
+    if (confirm("Acknowledge total termination of compiled preparation layout?")) {
+      studyPlan = [];
+      localStorage.removeItem('pma_studyPlan');
+      localStorage.removeItem('pma_intakeTag');
+      renderSchedule();
+      updateCountdown(null);
+      updateIntakeBadge(null);
+      showToast('Timeline layout terminated.');
+    }
+  }
+
+  function updateOverallProgress(completed, total) {
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+    document.getElementById('progressBar').style.width = `${pct}%`;
+    document.getElementById('progressPct').textContent = `${pct}%`;
+    document.getElementById('progressText').textContent = `${completed} of ${total} objectives finalized`;
+  }
+
+  function renderCategoryProgress(totals) {
+    const wrap = document.getElementById('categoryMeters');
+    const cats = Object.keys(totals);
+    if (cats.length === 0 || totals[cats[0]].t === 0) {
+      wrap.style.display = 'none';
+      wrap.innerHTML = '';
+      return;
+    }
+    wrap.style.display = 'flex';
+    wrap.innerHTML = cats.map(cat => {
+      const { t, d } = totals[cat];
+      const pct = t > 0 ? Math.round((d / t) * 100) : 0;
+      return `
+        <div class="category-meter-row">
+          <div class="cmr-label"><span>${cat}</span><span class="cmr-pct">${pct}%</span></div>
+          <div class="meter mini"><div class="meter-fill" style="width:${pct}%"></div></div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function toggleActionButtons(show) {
+    document.getElementById('saveCloudBtn').style.display = show ? 'block' : 'none';
+    document.getElementById('clearAllBtn').style.display = show ? 'inline-block' : 'none';
+  }
+
+  async function generateAIDrill() {
+    const topic = document.getElementById('aiTopicSelect').value;
+    const loader = document.getElementById('quizLoader');
+    const content = document.getElementById('quizContent');
+
+    loader.style.display = 'block';
+    content.style.display = 'none';
+    playTacticalSound('ai_ping');
+
+    const promptText = `
+      Act as an official military screening officer of the Pakistan Army for the PMA Long Course.
+      Generate exactly 5 highly realistic, challenging multiple-choice questions (MCQs) for the topic: "${topic}".
+      Include exact Verbal, Non-Verbal, or Academic pattern matching questions.
+      Keep the context professional, standard-aligned, and military-oriented where relevant.
+      Include answers and rich, brief tactical explanations explaining the exact shortcut/trick or concept.
+    `;
+
+    try {
+      // Direct call using the Free tier gemini-3-flash-preview model configuration
+      const apiKey = ""; // Canvas dynamically resolves active keys at runtime
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+      const payload = {
+        contents: [{ parts: [{ text: promptText }] }],
+        generationConfig: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: "ARRAY",
+            items: {
+              type: "OBJECT",
+              properties: {
+                question: { type: "STRING", description: "The MCQ question text." },
+                options: { type: "ARRAY", items: { type: "STRING" }, description: "Exactly 4 options." },
+                correctAnswerIndex: { type: "INTEGER", description: "0-based index of correct option." },
+                explanation: { type: "STRING", description: "The analytical breakdown of correct response." }
+              },
+              required: ["question", "options", "correctAnswerIndex", "explanation"]
+            }
+          }
+        }
+      };
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error('Server connection failure.');
+      }
+
+      const result = await response.json();
+      const candidateText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+      
+      if (!candidateText) {
+        throw new Error('Syllabus payload decoding error.');
+      }
+
+      const questions = JSON.parse(candidateText);
+      renderQuiz(questions);
+    } catch (err) {
+      console.error(err);
+      // Fail-safe mock generation block for robustness
+      const offlineQuestions = getOfflineDrillQuestions(topic);
+      renderQuiz(offlineQuestions);
+      showToast("Offline fail-safe database activated.");
+    } finally {
+      loader.style.display = 'none';
+      content.style.display = 'block';
+    }
+  }
+
+  function renderQuiz(questions) {
+    const content = document.getElementById('quizContent');
+    content.innerHTML = '';
+
+    if (!questions || !questions.length) {
+      content.innerHTML = '<div class="empty">Unable to compile simulation profile. Retry.</div>';
+      return;
+    }
+
+    questions.forEach((q, qIndex) => {
+      const qBlock = document.createElement('div');
+      qBlock.style.marginBottom = '20px';
+      qBlock.style.borderBottom = qIndex < questions.length - 1 ? '1px solid var(--line)' : 'none';
+      qBlock.style.paddingBottom = '16px';
+
+      const optionsHtml = q.options.map((opt, oIndex) => {
+        return `
+          <button type="button" class="quiz-opt-btn" 
+                  onclick="evaluateQuizAnswer(this, ${qIndex}, ${oIndex}, ${q.correctAnswerIndex}, '${escapeHtml(q.explanation)}')">
+            ${escapeHtml(opt)}
+          </button>
+        `;
+      }).join('');
+
+      qBlock.innerHTML = `
+        <div class="quiz-q-meta">Assessment Drill — Item ${qIndex + 1}</div>
+        <div class="quiz-question">${escapeHtml(q.question)}</div>
+        <div class="quiz-options" id="quiz-opts-${qIndex}">${optionsHtml}</div>
+        <div class="quiz-explanation" id="quiz-exp-${qIndex}" style="display:none;"></div>
+      `;
+      content.appendChild(qBlock);
+    });
+  }
+
+  function evaluateQuizAnswer(btn, qIndex, selectedIndex, correctIndex, explanation) {
+    const parent = document.getElementById(`quiz-opts-${qIndex}`);
+    const buttons = parent.querySelectorAll('.quiz-opt-btn');
+    const expBox = document.getElementById(`quiz-exp-${qIndex}`);
+
+    // Lock interactions
+    buttons.forEach(b => b.disabled = true);
+
+    if (selectedIndex === correctIndex) {
+      btn.classList.add('correct');
+      playTacticalSound('correct');
+    } else {
+      btn.classList.add('wrong');
+      buttons[correctIndex].classList.add('correct');
+      playTacticalSound('wrong');
+    }
+
+    expBox.innerHTML = `<strong>Feedback:</strong> ${explanation}`;
+    expBox.style.display = 'block';
+  }
+
+  // Minimal native Web Audio API synthesizer helper for offline tactical UI sounds
+  function playTacticalSound(type) {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      if (type === 'confirm') {
+        osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+        osc.frequency.setValueAtTime(880, ctx.currentTime + 0.08); // A5
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.25);
+      } else if (type === 'cancel') {
+        osc.frequency.setValueAtTime(329.63, ctx.currentTime); // E4
+        osc.frequency.setValueAtTime(220, ctx.currentTime + 0.06); // A3
+        gain.gain.setValueAtTime(0.12, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.2);
+      } else if (type === 'compile') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(440, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.3);
+        gain.gain.setValueAtTime(0.08, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.35);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.35);
+      } else if (type === 'ai_ping') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1046.50, ctx.currentTime); // C6
+        gain.gain.setValueAtTime(0.05, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.5);
+      } else if (type === 'correct') {
+        osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+        osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.05); // E5
+        osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.1); // G5
+        gain.gain.setValueAtTime(0.08, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.3);
+      } else if (type === 'wrong') {
+        osc.frequency.setValueAtTime(130.81, ctx.currentTime); // C3
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.4);
+      }
+    } catch(e) {
+      // Audio context is protected or unavailable
+    }
+  }
+
+  // Backup offline questions if network is dropped
+  function getOfflineDrillQuestions(topic) {
+    return [
+      {
+        question: "Verbal Analogy: Officer is to Army as Command is to _____.",
+        options: ["Soldier", "Battalion", "Weapon", "Base"],
+        correctAnswerIndex: 1,
+        explanation: "An Officer leads an Army unit; similarly, a Commander holds authority over a Battalion structure."
+      },
+      {
+        question: "Number Series Drill: 3, 8, 18, 38, ____. Find the next progression value.",
+        options: ["58", "68", "78", "88"],
+        correctAnswerIndex: 2,
+        explanation: "The difference pattern duplicates in scale: +5, +10, +20, therefore the next step is +40. 38 + 40 = 78."
+      },
+      {
+        question: "Pakistan Studies: Who was the recipient of the first Nishan-e-Haider for Pakistan Army?",
+        options: ["Captain Muhammad Sarwar Shaheed", "Major Raja Aziz Bhatti Shaheed", "Pilot Officer Rashid Minhas Shaheed", "Major Muhammad Akram Shaheed"],
+        correctAnswerIndex: 0,
+        explanation: "Captain Muhammad Sarwar Shaheed displayed outstanding courage in Kashmir Operations 1948, receiving the first-ever Nishan-e-Haider."
+      },
+      {
+        question: "English Structure: Fill the gap: 'The tactical platoon is fully confident ___ their operational deployment plan.'",
+        options: ["in", "of", "about", "with"],
+        correctAnswerIndex: 1,
+        explanation: "The adjective 'confident' is standardly complemented by the preposition 'of' in standard grammar guidelines."
+      },
+      {
+        question: "Mathematical Ratio: A map scale is 1:250,000. If two military outposts are 4cm apart on the map, what is their actual distance?",
+        options: ["1 km", "5 km", "10 km", "25 km"],
+        correctAnswerIndex: 2,
+        explanation: "4 cm * 250,000 = 1,000,000 cm = 10,000 meters = 10 km."
+      }
+    ];
+  }
+
+  function saveToCloud() {
+    // Generate simple copyable backup state for offline saving
+    const backupState = {
+      plan: studyPlan,
+      checklist: checklistState
+    };
+    
+    // Fallback clipboard copying mechanism per iFrame guidelines
+    const textarea = document.createElement("textarea");
+    textarea.value = JSON.stringify(backupState);
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      showToast("Deployment parameters copied to clipboard.");
+    } catch (e) {
+      showToast("Access to copy services denied.");
+    }
+    document.body.removeChild(textarea);
+  }
+
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+  </script>
+</body>
+</html>
