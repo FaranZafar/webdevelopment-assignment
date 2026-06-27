@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg,#557c9e,#07b6bf);
+        }
+        .card{
+            width: 350;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .card:hover{
+            transform: translateY(-10px);
+        }
+        .profile-img{
+           width: 120px;
+           height: 120px;
+           border-radius: 50%;
+           object-fit: cover;
+           border: 4px solid #4facfe;
+        }
+        h2{
+            margin-top:15px ;
+            color: #333;
+        }
+        h3{
+            margin-top: 5px;
+            color: #666666bc;
+        }
+        .bio{
+            margin-top: 10px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .social-links{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+        }
+        .social-links a{
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .facebook{
+            background: #1877f2;
+        }
+        .github{
+            background: #333;
+        }
+        .social-links a:hover{
+            opacity: 0.8;
+        }
+        .contact-btn{
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            background: #4facfe;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+        .contact-btn:hover{
+            background: #2b8eff;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="card">
+        <img src="data:image/jpeg;base64,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" alt="Profile" class="profile-img">
+        <h2>Faran Zafar</h2>
+        <h3>faranpannu@gmail.com</h3>
+        <h3>0329-0823452</h3>
+        <h3>University of Agriculture Faisalabad</h3>
+        <p class="bio">Software Engineering student
+            precticing html,css,javascript
+        </p>
+        <div class="social-links">
+            <a href="#" class="facebook">Facebook</a>
+            <a href="https://github.com/FaranZafar" class="github">Github</a>
+        </div>
+        <button class="contact-btn">
+            contact me
+        </button>
+    </div>
+</body>
+</html>
